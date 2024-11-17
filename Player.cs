@@ -91,6 +91,8 @@ public class Player : MonoBehaviour
             shield.gameObject.SetActive(false);
             GameObject.Find("GameManager").GetComponent<GameManager>().LoseLife(-1);
             hasShield = false;
+            //Play Power Down by Isaiah Lopez
+            gameManager.PlayPowerDown();
         }
         if (lives == 0)
         {
@@ -125,6 +127,8 @@ public class Player : MonoBehaviour
     {
         if(whatIHit.tag == "Powerup")
         {
+            //Play Power Up by Isaiah Lopez
+            gameManager.PlayPowerUp();
             int powerupType = Random.Range(1, 5);
             switch(powerupType)
             {
